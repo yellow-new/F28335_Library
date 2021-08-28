@@ -1,0 +1,8 @@
+模拟iic驱动oled 
+本oled驱动，由32改写 
+*  @attention
+ *  实验平台：F28335   核心板
+ * 个人博客：http://yellownew.cn 
+
+IO32 -> SDA
+IO33 -> SCL
