@@ -76,8 +76,8 @@ void UARTa_SendString(char * msg)
 	}
 }
 
-//整数转换成字符串,参数：生成的数组str,待转换的整数Num,整数长度为len
-void Num2Str(char str[],int Num,char len)//显示数字,长度为len
+//打印整数,参数：生成的数组str,待转换的整数Num,整数长度为len
+void Int_Printf(char str[],int Num,char len)//显示数字,长度为len
 {
     unsigned char i=0;
     while(len--)
@@ -87,6 +87,7 @@ void Num2Str(char str[],int Num,char len)//显示数字,长度为len
         i++;
     }
     str[i++] = '\0';
+    UARTa_SendString(str);
 }
 
 
@@ -98,10 +99,8 @@ unsigned long num_pow(char m,char n)
     return result;
 }
 
-//浮点数转换成字符串,参数：生成的数组str,待转换的浮点数floa,整数长度为len1,小数长度为len2
-
-
-void Float2Str(char str[],float floa,char len1,char len2)
+//打印浮点数,参数：生成的数组str,待转换的浮点数floa,整数长度为len1,小数长度为len2
+void Float_Printf(char str[],float floa,char len1,char len2)
 {
     if(floa<0)
     {
@@ -138,5 +137,6 @@ void Float2Str(char str[],float floa,char len1,char len2)
         str[0]=0x2D;//0x2D 为"-"的ascll码值
         str[i+j+2]='\0';
     }
+    UARTa_SendString(str);
 }
 
