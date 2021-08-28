@@ -11,7 +11,7 @@
 
 Uint16 s = 0,VOUT,bit1[6],t = 0,bit2;
 
-  //ÊıÂë¹Ü¶ÎÑ¡Éè¶¨
+  //æ•°ç ç®¡æ®µé€‰è®¾å®š
 void Display(Uint16 bit,Uint16 bit2)
 {
 
@@ -53,12 +53,12 @@ void Display(Uint16 bit,Uint16 bit2)
 }
 
 
-//ÊıÂë¹Ü³õÊ¼»¯
+//æ•°ç ç®¡åˆå§‹åŒ–
 void SMG_Init(void)
 {
 	EALLOW;
-	SysCtrlRegs.PCLKCR3.bit.GPIOINENCLK = 1;// ¿ªÆôGPIOÊ±ÖÓ
-	//SMG IO¿Ú Êı¾İ¿ØÖÆ¶Ë¿ÚÅäÖÃ
+	SysCtrlRegs.PCLKCR3.bit.GPIOINENCLK = 1;// å¼€å¯GPIOæ—¶é’Ÿ
+	//SMG IOå£ æ•°æ®æ§åˆ¶ç«¯å£é…ç½®
 	GpioCtrlRegs.GPAMUX1.bit.GPIO2=0;
 	GpioCtrlRegs.GPADIR.bit.GPIO2=1;
 	GpioCtrlRegs.GPAPUD.bit.GPIO2=0;
@@ -129,7 +129,7 @@ void SMG_Init(void)
 //	GpioCtrlRegs.GPADIR.bit.GPIO9=1;
 //	GpioCtrlRegs.GPAPUD.bit.GPIO9=0;
 	EDIS;
-//  ¿ØÖÆÎ»Ñ¡Òı½Å
+//  æ§åˆ¶ä½é€‰å¼•è„š
 	GpioDataRegs.GPACLEAR.bit.GPIO2=1;
 	GpioDataRegs.GPACLEAR.bit.GPIO4=1;
 	GpioDataRegs.GPACLEAR.bit.GPIO6=1;
@@ -141,7 +141,7 @@ void SMG_Init(void)
 }
 
 
-//ÊıÂë¹ÜÏÔÊ¾º¯Êı
+//æ•°ç ç®¡æ˜¾ç¤ºå‡½æ•°
 void SMG_display(float Voltage,float Voltage1)
 {
     if(t == 0)

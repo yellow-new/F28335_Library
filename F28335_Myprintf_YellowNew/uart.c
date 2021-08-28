@@ -9,7 +9,7 @@
 #include "stdio.h"
 int negative_number=0;
 
-//½«printfÖØ¶¨Ïòµ½´®¿Ú´òÓ¡
+//å°†printfé‡å®šå‘åˆ°ä¸²å£æ‰“å°
 int fputc(int _c, register FILE *_fp)
 {
         while (ScibRegs.SCICTL2.bit.TXEMPTY == 0);
@@ -17,7 +17,7 @@ int fputc(int _c, register FILE *_fp)
         return _c;
 }
 
-//´®¿Ú³õÊ¼»¯
+//ä¸²å£åˆå§‹åŒ–
 void UARTa_Init(Uint32 baud)
 {
 	unsigned char scihbaud=0;
@@ -25,8 +25,8 @@ void UARTa_Init(Uint32 baud)
 	Uint16 scibaud=0;
 
 	scibaud=37500000/(8*baud)-1;
-	scihbaud=scibaud>>8; //È¡µÃ¸ß°ËÎ»
-	scilbaud=scibaud&0xff;//È¡µÃµÍ°ËÎ»
+	scihbaud=scibaud>>8; //å–å¾—é«˜å…«ä½
+	scilbaud=scibaud&0xff;//å–å¾—ä½å…«ä½
 
 
 	EALLOW;
@@ -76,8 +76,8 @@ void UARTa_SendString(char * msg)
 	}
 }
 
-//´òÓ¡ÕûÊı,²ÎÊı£ºÉú³ÉµÄÊı×éstr,´ı×ª»»µÄÕûÊıNum,ÕûÊı³¤¶ÈÎªlen
-void Int_Printf(char str[],int Num,char len)//ÏÔÊ¾Êı×Ö,³¤¶ÈÎªlen
+//æ‰“å°æ•´æ•°,å‚æ•°ï¼šç”Ÿæˆçš„æ•°ç»„str,å¾…è½¬æ¢çš„æ•´æ•°Num,æ•´æ•°é•¿åº¦ä¸ºlen
+void Int_Printf(char str[],int Num,char len)//æ˜¾ç¤ºæ•°å­—,é•¿åº¦ä¸ºlen
 {
     unsigned char i=0;
     while(len--)
@@ -91,7 +91,7 @@ void Int_Printf(char str[],int Num,char len)//ÏÔÊ¾Êı×Ö,³¤¶ÈÎªlen
 }
 
 
-//m^nº¯Êı
+//m^nå‡½æ•°
 unsigned long num_pow(char m,char n)
 {
     unsigned long result=1;
@@ -99,7 +99,7 @@ unsigned long num_pow(char m,char n)
     return result;
 }
 
-//´òÓ¡¸¡µãÊı,²ÎÊı£ºÉú³ÉµÄÊı×éstr,´ı×ª»»µÄ¸¡µãÊıfloa,ÕûÊı³¤¶ÈÎªlen1,Ğ¡Êı³¤¶ÈÎªlen2
+//æ‰“å°æµ®ç‚¹æ•°,å‚æ•°ï¼šç”Ÿæˆçš„æ•°ç»„str,å¾…è½¬æ¢çš„æµ®ç‚¹æ•°floa,æ•´æ•°é•¿åº¦ä¸ºlen1,å°æ•°é•¿åº¦ä¸ºlen2
 void Float_Printf(char str[],float floa,char len1,char len2)
 {
     if(floa<0)
@@ -125,7 +125,7 @@ void Float_Printf(char str[],float floa,char len1,char len2)
         j++;
     }
     str[i+j+1] = '\0';
- //¸ºÊı->×Ö·û´®Êı×éÓÒÒÆÎ»
+ //è´Ÿæ•°->å­—ç¬¦ä¸²æ•°ç»„å³ç§»ä½
     if( negative_number == 1)
     {
         int t;
@@ -134,7 +134,7 @@ void Float_Printf(char str[],float floa,char len1,char len2)
         {
             str[t]=str[t-1];
         }
-        str[0]=0x2D;//0x2D Îª"-"µÄascllÂëÖµ
+        str[0]=0x2D;//0x2D ä¸º"-"çš„ascllç å€¼
         str[i+j+2]='\0';
     }
     UARTa_SendString(str);

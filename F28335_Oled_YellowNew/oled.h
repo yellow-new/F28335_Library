@@ -1,7 +1,7 @@
 /*
  * oled.h
  *
- *  Created on: 2021��5��5��
+ *  Created on: 2021锟斤拷5锟斤拷5锟斤拷
  *      Author: 86153
  */
 
@@ -9,8 +9,8 @@
 #define OLED_OLED_H_
 
 
-#define OLED_CMD    0   //д����
-#define OLED_DATA   1   //д����
+#define OLED_CMD    0   //写锟斤拷锟斤拷
+#define OLED_DATA   1   //写锟斤拷锟斤拷
 
 void OLED_Init(void);
 void OLED_WR_Byte(uchar dat,uchar mode);
@@ -31,13 +31,13 @@ void OLED_Clear(void);
 void OLED_SetContrast(uchar ucValue);
 //void OLED_ScrollDisplay(uchar num,uchar space,uchar mode);
 void OLED_DrawLine(uchar x1,uchar y1,uchar x2,uchar y2,uchar mode);
-void Boot_Animation(void);//��������
-void OLED_Draw_Waveform(uchar x1,uchar x2,uchar y,uchar z,uchar data,uchar mode);//������
+void Boot_Animation(void);//锟斤拷锟斤拷锟斤拷锟斤拷
+void OLED_Draw_Waveform(uchar x1,uchar x2,uchar y,uchar z,uchar data,uchar mode);//锟斤拷锟斤拷锟斤拷
 void Gui_Fill_Rect(uchar x0,uchar y0,uchar x1,uchar y1,uchar show);
 void Gui_Draw_Rect(uchar x0,uchar y0,uchar x1,uchar y1);
 void OLED_Dram_XY(void);
-void Draw_Circle(uchar x0,uchar y0,uchar r,uchar mode); //Բ��(x0,y0),�뾶r
-void Draw_fill_circle(uchar x0,uchar y0,uchar r,uchar mode);//д��ʵ��Բ��(x0,y0),�뾶r
+void Draw_Circle(uchar x0,uchar y0,uchar r,uchar mode); //圆锟斤拷(x0,y0),锟诫径r
+void Draw_fill_circle(uchar x0,uchar y0,uchar r,uchar mode);//写锟斤拷实锟斤拷圆锟斤拷(x0,y0),锟诫径r
 void Run_xy(uchar x0,uchar x1,uchar y0,uchar num,uchar run);
 
 

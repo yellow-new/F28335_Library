@@ -8,8 +8,8 @@
 #ifndef SMG_H_
 #define SMG_H_
 
-#include "DSP2833x_Device.h"     // DSP2833x м╥нд╪Ч
-#include "DSP2833x_Examples.h"   // DSP2833x юЩвсоЮ╧ьм╥нд╪Ч
+#include "DSP2833x_Device.h"     // DSP2833x Е╓╢Ф√┤Д╩╤
+#include "DSP2833x_Examples.h"   // DSP2833x Д╬▀Е╜░Г⌡╦Е┘ЁЕ╓╢Ф√┤Д╩╤
 
 
 

@@ -8,8 +8,8 @@
 #ifndef UART_H_
 #define UART_H_
 
-#include "DSP2833x_Device.h"     // DSP2833x ͷ�ļ�
-#include "DSP2833x_Examples.h"   // DSP2833x �������ͷ�ļ�
+#include "DSP2833x_Device.h"     // DSP2833x 头锟侥硷�?
+#include "DSP2833x_Examples.h"   // DSP2833x 锟斤拷锟斤拷锟斤拷锟酵凤拷募锟�
 
 extern int negative_number;
 
