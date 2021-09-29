@@ -7,7 +7,6 @@
 
 #include "uart.h"
 #include "stdio.h"
-int negative_number=0;
 
 //将printf重定向到串口打印
 int fputc(int _c, register FILE *_fp)
@@ -102,6 +101,7 @@ unsigned long num_pow(char m,char n)
 //打印浮点数,参数：生成的数组str,待转换的浮点数floa,整数长度为len1,小数长度为len2
 void Float_Printf(char str[],float floa,char len1,char len2)
 {
+    Uint16 negative_number;
     if(floa<0)
     {
         floa = -floa;
